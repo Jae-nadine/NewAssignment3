@@ -15,7 +15,12 @@ public class UserService {
 			String line;
 			while ((line = br.readLine()) != null) {
 				String[] userData = line.split(",");
-				users.add(new User(userData[0], userData[1], userData[2]));
+				if (userData.length == 3) {
+					users.add(new User(userData[0].trim(), userData[1].trim(), userData[2].trim()));
+
+				} else {
+					System.out.println("Skipping malformed line: " + line);
+				}
 			}
 		} catch (IOException e) {
 			System.out.println("Error reading file: " + e.getMessage());
