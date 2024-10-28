@@ -7,7 +7,7 @@ public class UserLoginApplication {
 	public static void main(String[] args) {
 		
 		UserService userService = new UserService();
-		userService.loadUsers("data.txt");
+		userService.loadUsers("src/com/coderscampus/assignmentsreviewed/data.txt");
 		
 		Scanner scanner = new Scanner(System.in);
 		int attempts = 0;
